@@ -34,11 +34,7 @@ if uploaded_files:
     # Crear DataFrame
     df = pd.DataFrame(all_texts)
 
-    # Mostrar DataFrame en la app
-    st.subheader("Texto extraído de las imágenes")
-    st.dataframe(df)
-
-    # Preparar Excel para descargar
+    # Botón para descargar Excel
     output = BytesIO()
     df.to_excel(output, index=False)
     st.download_button(
@@ -49,4 +45,3 @@ if uploaded_files:
     )
 
     st.success("Extracción completada. Puedes descargar el Excel.")
-
